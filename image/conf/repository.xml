@@ -29,6 +29,14 @@
     <LoginModule class="org.apache.jackrabbit.core.security.simple.SimpleLoginModule"/>
   </Security>
 
+  <DataStore class="org.apache.jackrabbit.core.data.db.DbDataStore">
+    <param name="dataSourceName" value="repositoryDS"/>
+    <param name="minRecordLength" value="1024" />
+    <param name="copyWhenReading" value="true" />
+    <param name="tablePrefix" value="" />
+    <param name="schemaObjectPrefix" value="" />
+  </DataStore>
+
   <Workspaces rootPath="${rep.home}/workspaces" defaultWorkspace="default" maxIdleTime="2"/>
  
   <Workspace name="${wsp.name}">
